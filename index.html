@@ -1,358 +1,549 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Khushboo Kanwar | Portfolio</title>
 
+    <meta name="description"
+          content="Khushboo Kanwar, BCA student at S.S.G. Pareek P.G. College, affiliated with the University of Rajasthan. Aspiring Web Developer learning HTML, CSS, C, Java and MySQL.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js" defer></script>
 </head>
 
 <body>
 
-    <!-- Navigation -->
-
-    <nav>
-
-        <div class="logo">
-            Khushboo.
+    <div id="loader">
+        <div class="loader-content">
+            <span class="loader-logo">K.</span>
+            <div class="loader-line"></div>
+            <p>WELCOME TO MY PORTFOLIO</p>
         </div>
+    </div>
 
-        <ul>
+    <canvas id="webgl"></canvas>
 
-            <li>
-                <a href="#home">Home</a>
-            </li>
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
 
-            <li>
-                <a href="#about">About</a>
-            </li>
+    <!-- NAVBAR -->
+    <header class="navbar">
 
-            <li>
-                <a href="#education">Education</a>
-            </li>
+        <a href="#home" class="logo">Khushboo<span>.</span></a>
 
-            <li>
-                <a href="#skills">Skills</a>
-            </li>
+        <nav class="nav-links" id="navLinks">
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#about" class="nav-link">About Me</a>
+            <a href="#education" class="nav-link">Education</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </nav>
 
-            <li>
-                <a href="#projects">Projects</a>
-            </li>
+        <a href="#contact" class="nav-cta">
+            Contact Me <span>↗</span>
+        </a>
 
-            <li>
-                <a href="#contact">Contact</a>
-            </li>
+        <button class="menu-toggle"
+                id="menuToggle"
+                aria-label="Toggle navigation"
+                aria-expanded="false">
+            <span></span>
+            <span></span>
+        </button>
 
-        </ul>
+    </header>
 
-    </nav>
+    <main>
 
+        <!-- HERO -->
+        <section class="hero section" id="home">
 
-    <!-- Hero Section -->
+            <div class="hero-left reveal">
 
-    <section class="hero" id="home">
+                <div class="availability">
+                    <span class="status-dot"></span>
+                    ASPIRING WEB DEVELOPER
+                </div>
 
-        <div class="hero-text">
+                <p class="eyebrow">HELLO! I'M</p>
 
-            <p>Hello, I'm</p>
+                <h1>
+                    KHUSHBOO<br>
+                    <span class="gradient-text">KANWAR</span><span class="accent-dot">.</span>
+                </h1>
 
-            <h1>
-                Khushboo <span>Kanwar</span>
-            </h1>
+                <h2 class="hero-subtitle">
+                    BCA Student <span>|</span> Aspiring Web Developer
+                </h2>
 
-            <h2>
-                BCA Student & Aspiring Developer
-            </h2>
+                <p class="hero-description">
+                    Welcome to my portfolio website! I am learning HTML,
+                    CSS, Java, C programming and MySQL. I enjoy exploring
+                    new technologies and developing my technical skills.
+                </p>
 
-            <p class="hero-description">
+                <div class="hero-buttons">
 
-                I am a BCA student interested in technology,
-                web development and software development.
-                I am currently learning new skills and
-                building my first projects.
+                    <a href="#projects" class="button button-primary">
+                        Explore My Work <span>↗</span>
+                    </a>
 
-            </p>
+                    <a href="#about" class="button button-secondary">
+                        About Me <span>↓</span>
+                    </a>
 
-            <div class="buttons">
+                </div>
 
-                <a href="#projects" class="btn primary-btn">
-                    View My Projects
+                <div class="hero-socials">
+                    <span>MY JOURNEY</span>
+                    <span>LEARN</span>
+                    <span class="social-separator">✦</span>
+                    <span>BUILD</span>
+                    <span class="social-separator">✦</span>
+                    <span>GROW</span>
+                </div>
+
+            </div>
+
+            <!-- 3D VISUAL -->
+            <div class="hero-right">
+
+                <div class="orbit orbit-one"></div>
+                <div class="orbit orbit-two"></div>
+                <div class="orbit orbit-three"></div>
+
+                <div class="hero-object" id="heroObject">
+                    <div class="object-face face-front">K</div>
+                    <div class="object-face face-back">K</div>
+                    <div class="object-face face-right"></div>
+                    <div class="object-face face-left"></div>
+                    <div class="object-face face-top"></div>
+                    <div class="object-face face-bottom"></div>
+                </div>
+
+                <div class="floating-card card-top">
+                    <span class="card-icon">✦</span>
+                    <div>
+                        <strong>Creative Learner</strong>
+                        <small>Always learning</small>
+                    </div>
+                </div>
+
+                <div class="floating-card card-bottom">
+                    <span class="card-icon purple-icon">&lt;/&gt;</span>
+                    <div>
+                        <strong>Future Web Developer</strong>
+                        <small>Learning by building</small>
+                    </div>
+                </div>
+
+                <div class="hero-caption">
+                    <span class="caption-line"></span>
+                    <span>MY PERSONAL PORTFOLIO</span>
+                </div>
+
+            </div>
+
+            <div class="hero-bottom">
+                <span>SCROLL TO EXPLORE</span>
+                <div class="scroll-line"><span></span></div>
+                <span>01 / 06</span>
+            </div>
+
+        </section>
+
+        <!-- ABOUT ME -->
+        <section class="section about-section" id="about">
+
+            <div class="section-heading reveal">
+                <span class="section-number">01 / ABOUT ME</span>
+                <h2>Getting to know<br><span class="gradient-text">Khushboo.</span></h2>
+            </div>
+
+            <div class="about-grid">
+
+                <div class="about-visual reveal">
+
+                    <div class="about-frame">
+                        <div class="about-circle"></div>
+
+                        <div class="about-initial">K<span>.</span></div>
+
+                        <span class="visual-label label-top">CURIOUS MIND</span>
+                        <span class="visual-label label-bottom">CREATIVE JOURNEY</span>
+
+                        <div class="visual-star star-one">✳</div>
+                        <div class="visual-star star-two">✦</div>
+                    </div>
+
+                </div>
+
+                <div class="about-content reveal">
+
+                    <p class="about-intro">
+                        Hi, I'm <span>Khushboo Kanwar</span>, a BCA student
+                        passionate about learning technology.
+                    </p>
+
+                    <p>
+                        I am studying at S.S.G. Pareek P.G. College,
+                        affiliated with the University of Rajasthan.
+                    </p>
+
+                    <p>
+                        I enjoy learning new technologies and developing
+                        my technical skills. I am currently learning
+                        HTML, CSS, C programming, Java and MySQL.
+                    </p>
+
+                    <p>
+                        This portfolio represents my learning journey,
+                        my current skills and my first step into web
+                        development. I look forward to creating more
+                        projects and improving my programming knowledge.
+                    </p>
+
+                    <div class="about-stats">
+
+                        <div class="stat">
+                            <strong>BCA</strong>
+                            <small>Degree Program</small>
+                        </div>
+
+                        <div class="stat">
+                            <strong>05</strong>
+                            <small>Learning Technologies</small>
+                        </div>
+
+                        <div class="stat">
+                            <strong>01</strong>
+                            <small>First Portfolio Project</small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- EDUCATION -->
+        <section class="section education-section" id="education">
+
+            <div class="section-heading reveal">
+                <span class="section-number">02 / EDUCATION</span>
+                <h2>My academic <span class="gradient-text">journey.</span></h2>
+                <p>
+                    My educational background and the foundation
+                    behind my technology journey.
+                </p>
+            </div>
+
+            <div class="education-timeline">
+
+                <article class="education-card reveal">
+
+                    <div class="education-marker">01</div>
+
+                    <div class="education-content">
+                        <span class="education-label">CURRENT DEGREE</span>
+
+                        <h3>Bachelor of Computer Applications (BCA)</h3>
+
+                        <p class="education-institute">
+                            S.S.G. Pareek P.G. College, Jaipur
+                        </p>
+
+                        <p class="education-detail">
+                            Affiliated with the University of Rajasthan.
+                        </p>
+                    </div>
+
+                    <div class="education-badge">BCA</div>
+
+                </article>
+
+                <article class="education-card reveal">
+
+                    <div class="education-marker">02</div>
+
+                    <div class="education-content">
+                        <span class="education-label">CLASS 12</span>
+
+                        <h3>Senior Secondary Education</h3>
+
+                        <p class="education-institute">
+                            AVM School
+                        </p>
+
+                        <p class="education-detail">
+                            Completed Class 12 with 72%.
+                        </p>
+                    </div>
+
+                    <div class="education-score">
+                        <strong>72%</strong>
+                        <span>CLASS 12</span>
+                    </div>
+
+                </article>
+
+                <article class="education-card reveal">
+
+                    <div class="education-marker">03</div>
+
+                    <div class="education-content">
+                        <span class="education-label">CLASS 10</span>
+
+                        <h3>Secondary Education</h3>
+
+                        <p class="education-institute">
+                            AVM School
+                        </p>
+
+                        <p class="education-detail">
+                            Completed Class 10 with 77%.
+                        </p>
+                    </div>
+
+                    <div class="education-score">
+                        <strong>77%</strong>
+                        <span>CLASS 10</span>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- SKILLS -->
+        <section class="section skills-section" id="skills">
+
+            <div class="section-heading reveal">
+                <span class="section-number">03 / MY SKILLS</span>
+
+                <h2>Technologies I'm<br><span class="gradient-text">learning.</span></h2>
+
+                <p>
+                    Developing my technical knowledge one concept
+                    and one line of code at a time.
+                </p>
+            </div>
+
+            <div class="skills-grid">
+
+                <article class="skill-card reveal" data-tilt>
+                    <div class="skill-card-top">
+                        <span class="skill-symbol html-symbol">5</span>
+                        <span class="skill-index">01</span>
+                    </div>
+                    <h3>HTML</h3>
+                    <p>Learning to create the structure of web pages.</p>
+                    <div class="skill-tag">WEB STRUCTURE</div>
+                </article>
+
+                <article class="skill-card reveal" data-tilt>
+                    <div class="skill-card-top">
+                        <span class="skill-symbol css-symbol">✳</span>
+                        <span class="skill-index">02</span>
+                    </div>
+                    <h3>CSS</h3>
+                    <p>Learning styling, layouts and visual design.</p>
+                    <div class="skill-tag">WEB DESIGN</div>
+                </article>
+
+                <article class="skill-card reveal" data-tilt>
+                    <div class="skill-card-top">
+                        <span class="skill-symbol c-symbol">C</span>
+                        <span class="skill-index">03</span>
+                    </div>
+                    <h3>C Programming</h3>
+                    <p>Learning programming logic and problem-solving.</p>
+                    <div class="skill-tag">PROGRAMMING</div>
+                </article>
+
+                <article class="skill-card reveal" data-tilt>
+                    <div class="skill-card-top">
+                        <span class="skill-symbol java-symbol">J</span>
+                        <span class="skill-index">04</span>
+                    </div>
+                    <h3>Java</h3>
+                    <p>Learning programming concepts using Java.</p>
+                    <div class="skill-tag">JAVA PROGRAMMING</div>
+                </article>
+
+                <article class="skill-card reveal" data-tilt>
+                    <div class="skill-card-top">
+                        <span class="skill-symbol db-symbol">DB</span>
+                        <span class="skill-index">05</span>
+                    </div>
+                    <h3>MySQL</h3>
+                    <p>Learning database management and SQL queries.</p>
+                    <div class="skill-tag">DATABASE</div>
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- PROJECTS -->
+        <section class="section projects-section" id="projects">
+
+            <div class="section-heading projects-heading reveal">
+
+                <div>
+                    <span class="section-number">04 / MY PROJECTS</span>
+                    <h2>My first step into<br><span class="gradient-text">building.</span></h2>
+                </div>
+
+                <span class="project-count">FIRST PROJECT / 01</span>
+
+            </div>
+
+            <div class="projects-grid">
+
+                <article class="project-card project-large reveal" data-tilt>
+
+                    <div class="project-preview preview-one">
+
+                        <div class="window-bar">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <small>KHUSHBOO'S PORTFOLIO</small>
+                        </div>
+
+                        <div class="preview-content">
+
+                            <div class="preview-mini-text">
+                                <span>BCA STUDENT | ASPIRING WEB DEVELOPER</span>
+
+                                <strong>
+                                    Hi, I'm<br>
+                                    Khushboo.
+                                </strong>
+
+                                <i></i>
+                            </div>
+
+                            <div class="preview-mini-object">K.</div>
+
+                        </div>
+
+                        <span class="preview-badge">01 / MY FIRST PROJECT</span>
+
+                    </div>
+
+                    <div class="project-info">
+
+                        <div>
+                            <span class="project-category">PERSONAL WEBSITE</span>
+
+                            <h3>My Portfolio Website</h3>
+
+                            <p>
+                                My first project, created to introduce myself,
+                                share my educational background, present my
+                                learning skills and showcase my journey
+                                towards becoming a web developer.
+                            </p>
+                        </div>
+
+                        <a href="#home"
+                           class="project-link"
+                           aria-label="Visit portfolio homepage">↗</a>
+
+                    </div>
+
+                    <div class="project-tech">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+
+                </article>
+
+            </div>
+
+            <div class="coming-soon reveal">
+                <span class="coming-icon">✦</span>
+
+                <div>
+                    <h3>More projects coming soon!</h3>
+                    <p>
+                        I am continuing to learn and look forward to
+                        building more projects as my skills grow.
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- CONTACT -->
+        <section class="section contact-section" id="contact">
+
+            <div class="contact-card reveal">
+
+                <div class="contact-decoration decoration-one"></div>
+                <div class="contact-decoration decoration-two"></div>
+
+                <span class="section-number">05 / CONTACT ME</span>
+
+                <h2>
+                    Let's connect<br>
+                    <span class="gradient-text">and say hello.</span>
+                </h2>
+
+                <p>
+                    Thank you for visiting my portfolio!
+                    Feel free to contact me through email.
+                </p>
+
+                <a href="mailto:khushbookanwar200629@gmail.com"
+                   class="button button-primary contact-button">
+
+                    Send Me an Email <span>↗</span>
+
                 </a>
 
-                <a href="#contact" class="btn secondary-btn">
-                    Contact Me
+                <a class="contact-email"
+                   href="mailto:khushbookanwar200629@gmail.com">
+
+                    khushbookanwar200629@gmail.com
+
                 </a>
 
             </div>
 
-        </div>
+        </section>
 
+    </main>
 
-        <div class="profile">
-            KK
-        </div>
+    <!-- FOOTER -->
+    <footer class="footer">
 
-    </section>
-
-
-    <!-- About Section -->
-
-    <section class="about" id="about">
-
-        <div class="section-title">
-
-            <h2>About Me</h2>
-
-            <p>Get to know me</p>
-
-        </div>
-
-        <div class="about-content">
-
-            <p>
-
-                Hello! I am Khushboo Kanwar, a BCA student
-                at S.S.G. Pareek P.G. College, affiliated
-                with the University of Rajasthan.
-
-                I have learned the basics of HTML, CSS,
-                JavaScript, C, C++ and Java.
-
-                I am currently improving my programming
-                and web development skills and looking
-                forward to creating useful real-world
-                projects.
-
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- Education Section -->
-
-    <section id="education">
-
-        <div class="section-title">
-
-            <h2>Education</h2>
-
-            <p>My academic journey</p>
-
-        </div>
-
-
-        <div class="education-card">
-
-            <h3>Bachelor of Computer Applications (BCA)</h3>
-
-            <p>
-                <strong>College:</strong>
-                S.S.G. Pareek P.G. College
-            </p>
-
-            <p>
-                <strong>University:</strong>
-                University of Rajasthan
-            </p>
-
-            <p>
-                <strong>Session:</strong>
-                2024 - 2027
-            </p>
-
-            <hr>
-
-            <p>
-                <strong>12th:</strong>
-                AVM School, RBSE - Commerce
-            </p>
-
-            <p>
-                <strong>Percentage:</strong>
-                72%
-            </p>
-
-            <p>
-                <strong>10th:</strong>
-                AVM School, RBSE
-            </p>
-
-            <p>
-                <strong>Percentage:</strong>
-                77%
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- Skills Section -->
-
-    <section class="skills" id="skills">
-
-        <div class="section-title">
-
-            <h2>My Skills</h2>
-
-            <p>Technologies I have started learning</p>
-
-        </div>
-
-
-        <div class="skills-container">
-
-            <div class="skill">JAVA</div>
-
-            <div class="skill">My SQL</div>
-
-            <div class="skill">CSS</div>
-
-            <div class="skill">C</div>
-
-            <div class="skill">C++</div>
-
-           
-
-        </div>
-
-    </section>
-
-
-    <!-- Projects Section -->
-
-    <section id="projects">
-
-        <div class="section-title">
-
-            <h2>My Projects</h2>
-
-            <p>Projects I am working towards building</p>
-
-        </div>
-
-
-        <div class="project-container">
-
-
-            <div class="project-card">
-
-                <h3>Personal Portfolio</h3>
-
-                <p>
-
-                    A responsive personal portfolio website
-                    created using HTML, CSS and JavaScript.
-
-                </p>
-
-            </div>
-
-
-            <div class="project-card">
-
-                <h3>To-Do List</h3>
-
-                <p>
-
-                    A simple task management website where
-                    users can add, complete and delete tasks.
-
-                </p>
-
-            </div>
-
-
-            <div class="project-card">
-
-                <h3>Student Project</h3>
-
-                <p>
-
-                    A beginner-friendly project that will
-                    be developed as part of my learning journey.
-
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-    <!-- Contact Section -->
-
-    <section class="contact" id="contact">
-
-        <div class="section-title">
-
-            <h2>Contact Me</h2>
-
-            <p>Let's connect</p>
-
-        </div>
-
-
-        <div class="contact-container">
-
-            <div class="contact-item">
-
-                <strong>Email:</strong>
-
-                khushbookanwar200629@gmail.com
-
-            </div>
-
-
-            <div class="contact-item">
-
-                <strong>Phone:</strong>
-
-                9351900750
-
-            </div>
-
-
-            <div class="contact-item">
-
-                <strong>Location:</strong>
-
-                Ambabari, Jaipur, Rajasthan
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- Footer -->
-
-    <footer>
+        <a href="#home" class="logo">K<span>.</span></a>
 
         <p>
-            © 2026 Khushboo Kanwar. All Rights Reserved.
+            Khushboo Kanwar | BCA Student | Aspiring Web Developer
         </p>
 
-        <p>
-            BCA Student | Aspiring Developer
-        </p>
+        <a href="#home" class="back-top">BACK TO TOP ↑</a>
 
     </footer>
 
-
-    <script src="script.js"></script>
-
 </body>
-
 </html>
