@@ -1,51 +1,24 @@
-// Mobile Menu
-const menu = document.querySelector(".menu-btn");
-const nav = document.querySelector(".nav-links");
 
-menu?.addEventListener("click", () => {
-    nav.classList.toggle("active");
+// Mobile menu
+const menu = document.getElementById("menu");
+const nav = document.getElementById("nav");
+
+menu.addEventListener("click", function() {
+    nav.classList.toggle("open");
+
+    menu.textContent = nav.classList.contains("open")
+        ? "✕"
+        : "☰";
 });
 
-// Smooth Scrolling
-document.querySelectorAll(".nav-links a").forEach(link => {
-    link.addEventListener("click", e => {
-        e.preventDefault();
-        document.querySelector(link.getAttribute("href"))
-            ?.scrollIntoView({ behavior: "smooth" });
-
-        nav.classList.remove("active");
+// Close menu after clicking a link
+document.querySelectorAll("#nav a").forEach(function(link) {
+    link.addEventListener("click", function() {
+        nav.classList.remove("open");
+        menu.textContent = "☰";
     });
 });
 
-// Scroll Reveal
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-        }
-    });
-});
-
-document.querySelectorAll(".reveal").forEach(el => {
-    observer.observe(el);
-});
-
-// 3D Card Effect
-document.querySelectorAll(".project-card, .skill-card")
-.forEach(card => {
-    card.addEventListener("mousemove", e => {
-        const x = e.offsetX / card.offsetWidth;
-        const y = e.offsetY / card.offsetHeight;
-
-        card.style.transform =
-            `perspective(500px) rotateY(${(x - .5) * 10}deg) rotateX(${(.5 - y) * 10}deg)`;
-    });
-
-    card.addEventListener("mouseleave", () => {
-        card.style.transform = "rotateY(0) rotateX(0)";
-    });
-});
-
-// Current Year
-document.querySelector(".year").textContent =
+// Current year
+document.getElementById("year").textContent =
     new Date().getFullYear();
