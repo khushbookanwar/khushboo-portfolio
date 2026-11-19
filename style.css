@@ -256,3 +256,13 @@ footer {
         font-size: 28px;
     }
 }
+#contact a:not(.btn) {
+    color: #c95f91;
+    text-decoration: underline;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#contact a:not(.btn):hover {
+    color: #b84d7b;
+}
